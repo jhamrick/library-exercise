@@ -30,13 +30,25 @@ for date in due_dates:
 	print "Day: " + day
 	print "Year: " + year
 	
+	# first we need to deal with years that
+	# have single quotes in front (e.g. '59)
 	if year.startswith("'"):
 		new_year = "19" + year[1:]
+		
+	# then we need to deal with years that
+	# are only two digits (e.g. 60)
+	elif len(year) == 2:
+		new_year = "19" + year
+		
+	# otherwise, we assume it must be
+	# formatted correctly
 	else:
 		new_year = year
 		
 	print "New year: " + new_year
+	assert len(new_year) == 4
 	
+print "Good job!"
 	
 	
 	
