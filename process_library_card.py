@@ -19,6 +19,24 @@ due_dates = lines[3:]
 print "Due dates: " + str(due_dates)
 #print "Due dates: ", due_dates
 
+for date in due_dates:
+	date_parts = date.split()
+	month = date_parts[0]
+	day = date_parts[1]
+	year = date_parts[2]
+	
+	print "-" # this is a separator
+	print "Month: " + month
+	print "Day: " + day
+	print "Year: " + year
+	
+	
+	
+	
+	
+	
+	
+
 
 
 
