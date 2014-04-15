@@ -16,7 +16,7 @@ print "Title: " + title
 # the lines[3:] syntax selects the element
 # at index 3 and every index afterwards
 due_dates = lines[3:]
-print "Due dates: " + str(due_dates)
+#print "Due dates: " + str(due_dates)
 #print "Due dates: ", due_dates
 
 for date in due_dates:
@@ -29,6 +29,23 @@ for date in due_dates:
 	print "Month: " + month
 	print "Day: " + day
 	print "Year: " + year
+	
+	if year.startswith("'"):
+		new_year = "19" + year[1:]
+	else:
+		new_year = year
+		
+	print "New year: " + new_year
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
