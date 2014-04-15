@@ -19,6 +19,11 @@ due_dates = lines[3:]
 #print "Due dates: " + str(due_dates)
 #print "Due dates: ", due_dates
 
+# make a list of the month abbreviations
+months = ["Jan", "Feb", "Mar", "Apr", 
+	"May", "Jun", "Jul", "Aug", "Sep",
+	"Oct", "Nov", "Dec"]
+
 for date in due_dates:
 	date_parts = date.split()
 	month = date_parts[0]
@@ -47,6 +52,13 @@ for date in due_dates:
 		
 	print "New year: " + new_year
 	assert len(new_year) == 4
+
+	# convert month names to numbers
+	assert month in months, "invalid month name"
+	month_index = months.index(month)
+	new_month = month_index + 1
+	
+	print "New month: " + str(new_month)
 	
 print "Good job!"
 	
