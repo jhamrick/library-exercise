@@ -24,6 +24,9 @@ months = ["Jan", "Feb", "Mar", "Apr",
 	"May", "Jun", "Jul", "Aug", "Sep",
 	"Oct", "Nov", "Dec"]
 
+# create a list to save our clean data
+clean_data = []
+
 for date in due_dates:
 	date_parts = date.split()
 	month = date_parts[0]
@@ -60,11 +63,31 @@ for date in due_dates:
 	
 	print "New month: " + str(new_month)
 	
-print "Good job!"
+	# add our new data to the list of
+	# cleaned data
+	#clean_data.append(
+	#	[new_year, str(new_month), day])
+	cleaned_due_date = new_year + "-" + \
+		str(new_month) + "-" + day
+	clean_data.append(cleaned_due_date)
 	
+print "Data successfully processed!"
+print "Clean data:" + str(clean_data)
 	
+# now we need to save out our nicely
+# formatted data!
+file_handler = open(
+	"library-card-clean.txt", "w")
+file_handler.write(call_number + "\n")
+file_handler.write(author + "\n")
+file_handler.write(title + "\n")
+
+for data in clean_data:
+	file_handler.write(data + "\n")
+
+file_handler.close()
 	
-	
+print "All done, good job!"
 	
 	
 	
